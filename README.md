@@ -40,7 +40,11 @@ Firslty, I checked data, which came three different dataset which are train, tes
 
 ### 4 - Data Preprocessing
 
-For preparing datasets to the model I made data processing which is reshaping columns from (784) to (28,28,1), and for seperate vector I save label feature then process test and train data. After that I split train set into train and validation dataset. Validation set contains %30 of original train dataset and split will be 0.7/0.03. Later this process I controlled distribution of labels in train dataset and validation dataset.
+For preparing datasets to the model I used ImageDataGenerator for rescaling which is __1/255.0__. 
+
+
+
+processing which is reshaping columns from (784) to (28,28,1), and for seperate vector I save label feature then process test and train data. After that I split train set into train and validation dataset. Validation set contains %30 of original train dataset and split will be 0.7/0.03. Later this process I controlled distribution of labels in train dataset and validation dataset.
 
 <p align="center">
   <img width="750" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/number%20of%20items%20in%20each%20class%20in%20dataset.png">

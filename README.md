@@ -48,25 +48,28 @@ Number of images in Train Directory:
 
 ### 4 - Data Preprocessing
 
-For preparing datasets to the model I used ImageDataGenerator for rescaling which is __1/255.0__. Also I defined batch size __128__ and for creating artifical images I used rotating that takes maximum __60__ degree rotation.
+For preparing datasets to the model I used ImageDataGenerator for rescaling which is __1/255.0__. Also I defined batch size __128__, and for creating artifical images I used rotating that takes maximum __60__ degree rotation. In the below code every parameters are visible with explanation. 
+```
+train_datagen = ImageDataGenerator(
+        rescale=1/255.0,            #multiply the data by the value provided
+        featurewise_center=True,    #create generator that centers pixel values
+        rotation_range=60,          #maximum 60 degree random rotation
+        width_shift_range=0.2,      #fraction of total width, if < 1, or pixels if >= 1.
+        height_shift_range=0.2,     #fraction of total height, if < 1, or pixels if >= 1.
+        shear_range=0.2,            #image disortion in axis
+        fill_mode='nearest')        #fill the color with nearest neighborhood for example, aaaaaaaa|abcd|dddddddd
 
+```
 
-
-processing which is reshaping columns from (784) to (28,28,1), and for seperate vector I save label feature then process test and train data. After that I split train set into train and validation dataset. Validation set contains %30 of original train dataset and split will be 0.7/0.03. Later this process I controlled distribution of labels in train dataset and validation dataset.
-
-<p align="center">
-  <img width="750" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/number%20of%20items%20in%20each%20class%20in%20dataset.png">
-</p>
-<p align="center">
-   <b>Number of Items in Each Class in Dataset</b>
-</p>
-
-<p align="center">
-  <img width="750" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/number%20of%20items%20in%20each%20class%20in%20validation%20dataset.png">
-</p>
-<p align="center">
-   <b>Number of Items in Each Class in Validation Dataset</b>
-</p>
+```
+train_generator = train_datagen.flow_from_directory(
+        train_path,
+        shuffle=True,              #shuffling the order of the image that is being yielded
+        target_size=(150,150),     #size of image
+        batch_size=128,            #size of the batches of data 
+        class_mode='categorical'   #predicting more than two classes so we will use categorical
+    )
+```
 
 ### 5 - Modelling 
 

@@ -4,7 +4,9 @@
 
 ### 1 - Abstract
 
-In this project I made Exploratory Data Analysis, Data Visualisation and lastly Modelling. Intel Image Dataset contains 25 images in 3 different sets. Each example is 150x150 image and associated with __6__ labels(targets). #After examining the dataset I made data preprocessing for reshaping columns from __784__ to __(28,28,1)__ and save the target feature as a seperate vector. In modelling part, with a sequential model with multiple convolution layers with __50__ Epochs for training the data. For prediction overfitting and underfitting I adjust Dropout Layers. Overally, model gives __0.9236__ accuracy. Furthermore with Data augmentation and/or incresing data size can be helpful for taking better result. 
+In this project I made Exploratory Data Analysis, Data Visualisation and lastly Modelling. Intel Image Dataset contains 25 images in 3 different sets. Each example is 150x150 image and associated with __6__ labels(targets). #After examining the dataset I used ImageDataGenerator for example rescaling images and increasing the artifical training and test datasets. 
+
+In modelling part, with a sequential model with multiple convolution layers with __50__ Epochs for training the data. For prediction overfitting and underfitting I adjust Dropout Layers. Overally, model gives __0.9236__ accuracy. Furthermore with Data augmentation and/or incresing data size can be helpful for taking better result. 
 
 
 ### 2 - Data
@@ -132,42 +134,10 @@ As a result, my model gives overally good results.
    <b>Loss of the Model</b>
 </p>
 
-Test Loss is __0.2166__
+Test Loss is __0.2682__
 
 
-Test Accuracy is __0.9236__
+Test Accuracy is __0.9023__
 
-
-<p align="center">
-  <img width="500" height="400" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/classification%20report.png">
-</p>
-<p align="center">
-   <b>Classification Report</b>
-</p>
-<p align="center">
-  <img width="500" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/true%20prediction.png">
-</p>
-<p align="center">
-   <b>Correctly Predicted Items</b>
-</p>
-<p align="center">
-  <img width="500" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/false%20prediction.png">
-</p>
-<p align="center">
-   <b>Falsely Predicted Items</b>
-</p>
-
-
-
-
-The Best accuracy is for Trousers(Class 1), Sandals(Class 5) with __0.99__ and worst accuracy is Shirt(Class 6) with __0.78__.
-
-
-The Best recall is for Trousers(Class 1), with __0.99__ and worst recall is Shirt(Class 6) with __0.79__
-
-
-The Best F-1 Score is for Trousers(Class 1) with __0.99__ and worst F-1 Score is Shirt(Class 6) with __0.78__
-
-
-For better results, data augmentation can be implemented or data size can be expandable. 
+For higher accuracy data size can enlarging or hyperparameter tuning can be implemented. 
 

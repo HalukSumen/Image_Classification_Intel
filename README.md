@@ -104,14 +104,14 @@ Finally I am compiling model according these parameters,
 As a result, my model gives overally good results. 
 
 <p align="center">
-  <img width="750" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/accuracy.png">
+  <img width="750" height="500" src="https://github.com/HalukSumen/Image_Classification_Intel/blob/main/images/training_validation_acc.png">
 </p>
 <p align="center">
    <b>Accuracy of the Model</b>
 </p>
 
 <p align="center">
-  <img width="750" height="500" src="https://github.com/HalukSumen/FashionMnist/blob/main/images/loss.png">
+  <img width="750" height="500" src="https://github.com/HalukSumen/Image_Classification_Intel/blob/main/images/training_validation_loss.png">
 </p>
 <p align="center">
    <b>Loss of the Model</b>

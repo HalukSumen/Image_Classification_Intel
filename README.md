@@ -93,15 +93,21 @@ model.compile(
         metrics = ['accuracy']
     )
 ```
-
-
-
-
-
+Additionally, because of higher epochs time I decided to implement Early Stopping class, which is stopping training when it doesnt improve anymore or extremly low.
+```
+    tf.keras.callbacks.EarlyStopping(
+        monitor='val_loss',            #which quantity will monitor
+        min_delta=0.001,               #minimum change in the monitored quantity to qualify as an improvement
+        patience=5,                    #number of epochs with no improvement after which training will be stopped
+        verbose=1,                     #verbosity mode
+        mode='auto',                   #the direction is automatically inferred from the name of the monitored quantity.
+        baseline=None,                 #baseline value for the monitored quantity
+        restore_best_weights=True)]    #whether to restore model weights from the epoch with the best value of the monitored quantity
+```
 
 ### 6 - Result & Future Work
 
-As a result, my model gives overally good results. 
+As a result, my model gives overally good results which is the result of InceptionResNetV2 model.
 
 <p align="center">
   <img width="750" height="500" src="https://github.com/HalukSumen/Image_Classification_Intel/blob/main/images/training_validation_acc.png">
@@ -118,7 +124,6 @@ As a result, my model gives overally good results.
 </p>
 
 Test Loss is __0.2682__
-
 
 Test Accuracy is __0.9023__
 

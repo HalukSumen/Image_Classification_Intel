@@ -4,9 +4,7 @@
 
 ### 1 - Abstract
 
-In this project I made Exploratory Data Analysis, Data Visualisation and lastly Modelling. Intel Image Dataset contains 25 images in 3 different sets. Each example is 150x150 image and associated with __6__ labels(targets). #After examining the dataset I used ImageDataGenerator for example rescaling images and increasing the artifical training and test datasets. 
-
-In modelling part, with a sequential model with multiple convolution layers with __50__ Epochs for training the data. For prediction overfitting and underfitting I adjust Dropout Layers. Overally, model gives __0.9236__ accuracy. Furthermore with Data augmentation and/or incresing data size can be helpful for taking better result. 
+In this project I made Exploratory Data Analysis, Data Visualisation and lastly Modelling. Intel Image Dataset contains 25 images in 3 different sets. Each example is 150x150 image and associated with __6__ labels(targets). After examining the dataset I used ImageDataGenerator for example rescaling images and increasing the artifical training and test datasets. In modelling part, with a InceptionResNetV2 and several other layers implemented. Model trained with __10__ Epochs for training the data. Also for long epochs time I implemented callback for time saving. Overally, model gives __0.9023__ accuracy. Furthermore with hyperparameter tuning model can give higher accuracy or using GPU for training it will reduce time and number of epochs can be increased.
 
 
 ### 2 - Data
@@ -127,5 +125,6 @@ Test Loss is __0.2682__
 
 Test Accuracy is __0.9023__
 
-For higher accuracy hyperparameter tuning can be implemented. 
+For higher accuracy hyperparameter tuning can be implemented or using GPU for training it will reduce training time and with this time saving epochs number can be increased.
+
 

@@ -36,7 +36,15 @@ Each training and test example is assigned to one of the following labels:
 
 ### 3 - Exploratory Data Analysis
 
-Firslty, I checked data, which came three different dataset which are train, test and validation. 
+Firslty, I checked data, which came three different dataset which are train, test and validation. Later I checked distribution of labels in datasets moreover I see all the classes(labels) equally distributed. So luckily I dont need to do Oversampling or Undersampling.
+
+Number of images in Train Directory: 
+* __Buildings:  2191__
+* __Street:     2382__
+* __Mountain:   2512__
+* __Glacier:    2404__
+* __Sea:        2274__
+* __Forest:     2271__
 
 ### 4 - Data Preprocessing
 

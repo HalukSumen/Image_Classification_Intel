@@ -75,46 +75,29 @@ train_generator = train_datagen.flow_from_directory(
 
 ### 5 - Modelling 
 
-I used Sequential model. The sequential model is appropriate for a plain stack of layers where each layer has exactly one input tensor and one output tensor. Then I add Conv2D layer, MaxPooling2D, Flatten and Dense. For each layer I used these parameters.
+I used pretrained InceptionResNetV2 model. The InceptionResNetV2 model is already trained more than 1 million images. Then I added these parameters over the pre-trained model.
 
-__1.Conv2D__
-* filters = 32
-* kernel_size = (3,3)
-* activation function = relu 
-* kernel_initializer = normal
-* input_shape = (28,28,1)
-
-__2.MaxPooling2D__
-* pool_size = (2,2)
-
-
-__3.Conv2D__
-* filters = 64
-* kernel_size = (3,3)
-* activation function = relu 
-
-__4.Flatten__
-
-
-A flatten operation on a tensor reshapes the tensor to have the shape that is equal to the number of elements contained in tensor non including the batch dimension and doesnt need any parameters.
-
-__5.Dense__
+```
+x = tf.keras.layers.Dropout(0.2)(last_output)
+x = tf.keras.layers.Dense(units=128, activation='relu')(x)
+x = tf.keras.layers.Dropout(0.2)(x)
+x = tf.keras.layers.Dense(units=128, activation='relu')(x)
+x = tf.keras.layers.Dropout(0.2)(x)
+x = tf.keras.layers.Dense(units=6, activation='softmax')(x)
+```
+Finally I am compiling model according these parameters, I used RMSprop class and I gave learning rate 0.0002 and momentum 0.9( A scalar or a scalar Tensor). 
+```
+model.compile(
+        optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.0002, momentum=0.9, centered=True), 
+        loss = ['categorical_crossentropy'], 
+        metrics = ['accuracy']
+    )
+```
 
 
-In first Dense Layer,
-* units = 128
-* activation function = relu
 
 
-In second Dense Layer,
-* units = 10
-* activation function = softmax
 
-Finally I am compiling model according these parameters,
-
-* loss = categorical cross entrophy
-* optimizer = adam
-* metrics = accuracy
 
 ### 6 - Result & Future Work
 
@@ -139,5 +122,5 @@ Test Loss is __0.2682__
 
 Test Accuracy is __0.9023__
 
-For higher accuracy data size can enlarging or hyperparameter tuning can be implemented. 
+For higher accuracy hyperparameter tuning can be implemented. 
 

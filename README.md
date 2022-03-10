@@ -36,11 +36,11 @@ Each training and test example is assigned to one of the following labels:
 
 ### 3 - Exploratory Data Analysis
 
-Firslty, I checked data, which came three different dataset which are train, test and validation. Later I checked distribution of labels in datasets and I create a list for expressing images for both datasets, moreover I see all the classes(labels) equally distributed. So I dont need to do Oversampling or Undersampling. 
+Firslty, I checked data, which came three different dataset which are train, test and validation. 
 
 ### 4 - Data Preprocessing
 
-For preparing datasets to the model I used ImageDataGenerator for rescaling which is __1/255.0__. 
+For preparing datasets to the model I used ImageDataGenerator for rescaling which is __1/255.0__. Also I defined batch size __128__ and for creating artifical images I used rotating that takes maximum __60__ degree rotation.
 
 
 
